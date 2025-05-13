@@ -3,10 +3,10 @@ package be.vdab.jpf8;
 public class Spaarrekening {
     private String rekeningNummer;
     private double saldo;
-    private double intrest;
+    private static double intrest;
     public Spaarrekening(String reknr, double intrest) {
         rekeningNummer = reknr;
-        this.intrest = intrest;
+        Spaarrekening.intrest = intrest;
     }
     public Spaarrekening(String reknr, double intrest, double saldo) {
         this(reknr, intrest);
@@ -26,22 +26,32 @@ public class Spaarrekening {
         this.saldo = saldo;
     }
 
-    public double getIntrest() {
+    public static double getIntrest() {
         return intrest;
     }
 
     public void setIntrest(double intrest) {
-        this.intrest = intrest;
+        Spaarrekening.intrest = intrest;
+    }
+
+    private boolean checkBedrag(double bedrag) {
+        return bedrag > 0.0;
     }
 
     public void storten (double bedrag) {
-        saldo += bedrag;
+        if (checkBedrag(bedrag)) {
+            saldo += bedrag;
+        }
     }
     public void afhalen (double bedrag) {
-        saldo -= bedrag;
+        if (checkBedrag(bedrag)) {
+            saldo -= bedrag;
+        }
     }
     public void overschrijven(Spaarrekening spaarRek, double bedrag){
-        saldo -= bedrag;
-        spaarRek.storten(bedrag);
+        if (checkBedrag(bedrag)) {
+            saldo -= bedrag;
+            spaarRek.storten(bedrag);
+        }
     }
 }
