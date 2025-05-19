@@ -1,6 +1,8 @@
 package be.vdab.jpf10;
 
-public class Vrachtwagen extends Voertuig{
+import be.vdab.jpf13.voertuigen.Vervuiler;
+
+public class Vrachtwagen extends Voertuig implements Vervuiler {
 
     private float maxLading = 10_000F;
 
@@ -35,6 +37,11 @@ public class Vrachtwagen extends Voertuig{
         System.out.println("Gemiddeld verbruik: " + super.getGemVerbruik() + "l/100km");
         System.out.println("Nummerplaat: " + super.getNummerplaat());
         System.out.println("Max lading: " + maxLading);
+    }
+
+    @Override
+    public double berekenVervuiling() {
+        return getKyotoScore() * 20.0F;
     }
 
     @Override

@@ -1,6 +1,9 @@
 package be.vdab.jpf10;
 
-public abstract class Voertuig {
+import be.vdab.jpf13.voertuigen.Milieu;
+import be.vdab.jpf13.voertuigen.Privaat;
+
+public abstract class Voertuig implements Privaat, Milieu {
 
     private String polishouder;
     private float kostprijs;
@@ -73,6 +76,20 @@ public abstract class Voertuig {
         System.out.println("Aantal PK: " + pk);
         System.out.println("Gemiddeld verbruik: " + gemVerbruik + "l/100km");
         System.out.println("Nummerplaat: " + nummerplaat);
+    }
+
+    @Override
+    public void geefPrivateData() {
+        System.out.println(" --- Private data van voertuig --- ");
+        System.out.println("Polishouder :" + getPolishouder());
+        System.out.println("Nummerplaat :" + getNummerplaat());
+    }
+    @Override
+    public void geefMilieuData() {
+        System.out.println(" --- Milieu data van voertuig ---");
+        System.out.println("PK :" + getPk());
+        System.out.println("Kostprijs :" + getKostprijs());
+        System.out.println("Gem. verbruik :" + getGemVerbruik());
     }
 
     @Override

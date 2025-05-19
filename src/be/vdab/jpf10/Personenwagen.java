@@ -1,6 +1,8 @@
 package be.vdab.jpf10;
 
-public class Personenwagen extends Voertuig{
+import be.vdab.jpf13.voertuigen.Vervuiler;
+
+public class Personenwagen extends Voertuig implements Vervuiler {
 
     private int aantalDeuren = 4;
     private int aantalPassagiers = 5;
@@ -47,6 +49,11 @@ public class Personenwagen extends Voertuig{
         System.out.println("Nummerplaat: " + super.getNummerplaat());
         System.out.println("Aantal deuren: " + aantalDeuren);
         System.out.println("Aantal passagiers: " + aantalPassagiers);
+    }
+
+    @Override
+    public double berekenVervuiling() {
+        return getKyotoScore() * 5.0F;
     }
 
     @Override
