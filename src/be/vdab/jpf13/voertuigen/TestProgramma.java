@@ -1,7 +1,9 @@
 package be.vdab.jpf13.voertuigen;
 
-import be.vdab.jpf10.Personenwagen;
-import be.vdab.jpf10.Vrachtwagen;
+import be.vdab.jpf13.util.Milieu;
+import be.vdab.jpf13.util.Privaat;
+import be.vdab.jpf13.util.Vervuiler;
+import be.vdab.jpf13.verwarming.Stookketel;
 
 import java.text.DecimalFormat;
 

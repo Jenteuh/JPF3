@@ -1,5 +1,9 @@
 package be.vdab.jpf10;
 
+import be.vdab.jpf13.voertuigen.Personenwagen;
+import be.vdab.jpf13.voertuigen.Voertuig;
+import be.vdab.jpf13.voertuigen.Vrachtwagen;
+
 public class TestProgramma {
     public static void main(String[] args) {
 

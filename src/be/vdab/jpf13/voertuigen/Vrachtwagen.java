@@ -1,6 +1,6 @@
-package be.vdab.jpf10;
+package be.vdab.jpf13.voertuigen;
 
-import be.vdab.jpf13.voertuigen.Vervuiler;
+import be.vdab.jpf13.util.Vervuiler;
 
 public class Vrachtwagen extends Voertuig implements Vervuiler {
 

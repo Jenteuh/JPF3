@@ -1,7 +1,7 @@
-package be.vdab.jpf10;
+package be.vdab.jpf13.voertuigen;
 
-import be.vdab.jpf13.voertuigen.Milieu;
-import be.vdab.jpf13.voertuigen.Privaat;
+import be.vdab.jpf13.util.Milieu;
+import be.vdab.jpf13.util.Privaat;
 
 public abstract class Voertuig implements Privaat, Milieu {
 
