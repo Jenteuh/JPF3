@@ -1,4 +1,4 @@
-package be.vdab.jpf13.voertuigen;
+package be.vdab.jpf13.util;
 
 public interface Privaat {
     void geefPrivateData();
