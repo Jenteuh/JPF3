@@ -59,29 +59,22 @@ public class LandMain {
         var absVerschil = BigDecimal.valueOf(Double.MAX_VALUE);
         for (var eenLand : landen) {
             if(eenLand != null) {
-                totBevolkingsdichtheid =
-                        totBevolkingsdichtheid.add(eenLand.bevolkingsDichtheid());
+                totBevolkingsdichtheid = totBevolkingsdichtheid.add(eenLand.bevolkingsDichtheid());
                 aantalLanden++;
                 System.out.println(eenLand);
             }
         }
-        gemBevolkingsdichtheid = totBevolkingsdichtheid
-                .divide(BigDecimal.valueOf(aantalLanden), 2,
-                        RoundingMode.HALF_UP);
+        gemBevolkingsdichtheid = totBevolkingsdichtheid.divide(BigDecimal.valueOf(aantalLanden), 2, RoundingMode.HALF_UP);
         for (var eenLand : landen) {
             if ( ((eenLand.bevolkingsDichtheid()
                     .subtract(gemBevolkingsdichtheid))
                     .abs())
                     .compareTo(absVerschil) < 0 ) {
                 hetLand = eenLand;
-                absVerschil = (eenLand.bevolkingsDichtheid()
-                        .subtract(gemBevolkingsdichtheid)).abs();
+                absVerschil = (eenLand.bevolkingsDichtheid().subtract(gemBevolkingsdichtheid)).abs();
             }
         }
-        System.out.println("\nDe gemiddelde bevolkingsdichtheid is " +
-                gemBevolkingsdichtheid);
-        System.out.println("Het land dat het dichtst aanleunt bij dit gemiddelde is " + hetLand.getLandNaam() +
-                " met een bevolkingsdichtheid van " +
-                        hetLand.bevolkingsDichtheid() );
+        System.out.println("\nDe gemiddelde bevolkingsdichtheid is " + gemBevolkingsdichtheid);
+        System.out.println("Het land dat het dichtst aanleunt bij dit gemiddelde is " + hetLand.getLandNaam() + " met een bevolkingsdichtheid van " + hetLand.bevolkingsDichtheid() );
     }
 }
