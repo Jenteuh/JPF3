@@ -6,6 +6,7 @@ import be.vdab.jpf13.util.Vervuiler;
 import be.vdab.jpf13.verwarming.Stookketel;
 
 import java.text.DecimalFormat;
+import java.util.TreeSet;
 
 public class TestProgramma {
     public static void main(String[] args) {
@@ -41,6 +42,7 @@ public class TestProgramma {
         for (var auto:voertuigen) {
             auto.geefPrivateData();
         }
+
         System.out.println("\n*** Array van milieu geg van auto's ***");
         var voertuigen2 = new Milieu[4];
         voertuigen2[0] = opel1;
@@ -49,6 +51,18 @@ public class TestProgramma {
         voertuigen2[3] = volvo2;
         for (var auto:voertuigen2) {
             auto.geefMilieuData();
+        }
+
+        var setVoertuigen = new TreeSet<Voertuig>();
+        setVoertuigen.add(opel2);
+        setVoertuigen.add(new Personenwagen("Piet Peeters",
+                18321.0F, 110, 7.1F, "1-OPQ-099", 5, 5));
+        setVoertuigen.add(volvo2);
+        setVoertuigen.add(new Vrachtwagen("Jan Vos",
+                254612.0F, 450, 33.1F, "1-AZE-123", 6200.0F));
+        System.out.println("\n*** TreeSet van voertuigen ***");
+        for (var eenVoertuig : setVoertuigen) {
+            System.out.println(eenVoertuig);
         }
     }
 }
